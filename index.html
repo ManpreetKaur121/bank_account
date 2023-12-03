@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+ function BankAccount(accountNumber, name, type,balance){
+    this.accountNumber=accountNumber
+    this.name=name
+    this.type=type
+    this.balance=balance
+
+    this.deposit=function(amount){
+    this.balance+=amount
+    }
+
+    this.withdraw=function(amount){
+        if(this.balance>=amount){
+            this.balance-=amount
+        }
+        else{
+          console.log(  "Insufficient Balance",this.balance)     
+           }
+    }
+    this.checkbal=function(){
+        console.log(this.balance)
+    }
+    this.isActive=function(){
+       if(this.balance!=0){
+       console.log("Active")
+       }
+       else{
+        console.log("InActive")
+       }
+
+    }
+
+ }
+ let arr=[]
+ let a1= new BankAccount(123,"Manpreet","Saving",10000)
+ let a2= new BankAccount(124,"Sanpreet","Saving",20000)
+ let a3= new BankAccount(125,"Vanpreet","Saving",1000)
+ let a4= new BankAccount(126,"Sanpreet","Saving",8000)
+ let a5= new BankAccount(127,"Kanpreet","Saving",2000)
+ let a6= new BankAccount(128,"Ganpreet","Saving",3000)
+ let a7= new BankAccount(129,"Ranpreet","Saving",4000)
+ let a8= new BankAccount(111,"Tanpreet","Saving",5000)
+ let a9= new BankAccount(121,"Hanpreet","Saving",0)
+ let a10= new BankAccount(120,"Kanpreet","Saving",7000)
+ let a11= new BankAccount(122,"Danpreet","Saving",9000)
+ arr.push(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11)
+//  console.log(arr)
+//  
+ 
+//  console.log(a1)
+a1.deposit(100)
+a1.withdraw(11000)
+
+a11.withdraw(9000)
+console.log(a11)
+a8.checkbal()
+a9.isActive()
+a10.isActive()
+
+function TotalBalance(){
+    let amount=0
+   
+    for(i=0;i<arr.length;i++){
+        if(arr[i].balance>0){
+       amount+=arr[i].balance
+    }
+}
+    console.log(amount)
+
+}
+TotalBalance()
+
+</script>
+
+
